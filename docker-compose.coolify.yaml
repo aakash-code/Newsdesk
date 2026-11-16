@@ -1,0 +1,15 @@
+# Coolify deployment on the Oracle server (news.lighthour.in).
+# nginx on the host serves 80/443 and forwards / to 3000 and /api to 3001.
+services:
+  newsdesk:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:3001:3001"
+    volumes:
+      - /opt/newsdesk/data:/app/data
+    environment:
+      - TZ=Asia/Kolkata
+    restart: unless-stopped

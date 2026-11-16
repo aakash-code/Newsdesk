@@ -1,4 +1,4 @@
-# Coolify deployment on the Oracle server (news.lighthour.in).
+# Coolify deployment on the Oracle server (newsdesk.lighthour.in).
 # nginx on the host serves 80/443 and forwards / to 3000 and /api to 3001.
 services:
   newsdesk:
